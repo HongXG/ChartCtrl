@@ -347,6 +347,10 @@ public:
 	**/
 	void SetBackGradient(COLORREF Col1, COLORREF Col2, EGradientType GradientType);
 
+	//! Enables/disables the edge feature
+	void SetEdgeEnabled(bool bEnabled) { m_bEdgeEnabled = bEnabled; }
+	//! Returns true if the edge feature is enabled
+	bool GetEdgeEnabled() const		   { return m_bEdgeEnabled;	    }
 	//! Enables/disables the pan feature
 	void SetPanEnabled(bool bEnabled)  { m_bPanEnabled = bEnabled;  }
 	//! Returns true if the pan feature is enabled
@@ -538,6 +542,8 @@ private:
 	//! The chart titles
 	CChartTitle*  m_pTitles;	
 
+	//! Specifies if the edge drawing is enabled
+	bool m_bEdgeEnabled;
 	//! Specifies if the mouse panning is enabled
 	bool m_bPanEnabled;
 	//! Specifies if the right mouse button is currently pressed

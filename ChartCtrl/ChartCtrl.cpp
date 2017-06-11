@@ -108,6 +108,7 @@ CChartCtrl::CChartCtrl()
 	m_pTitles = new CChartTitle(this);
 	
 	m_bMemDCCreated = false;
+	m_bEdgeEnabled = true;
 	m_bPanEnabled = true;
 	m_bRMouseDown = false;
 
@@ -517,7 +518,10 @@ void CChartCtrl::DrawBackground(CDC* pDC, CRect ChartRect)
 	}
 
 	// Draw the edge.
-	pDC->DrawEdge(ChartRect,EdgeType,BF_RECT);
+	if (m_bEdgeEnabled)
+	{
+		pDC->DrawEdge(ChartRect,EdgeType,BF_RECT);
+	}
 }
 
 void CChartCtrl::RefreshScreenAutoAxes()
